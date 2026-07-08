@@ -1,4 +1,4 @@
-![AlphaFold Cookbook cover](../assets/images/cover/alphafold-cookbook-cover.png)
+![AlphaFold Cookbook cover](/alphafold-cookbook/assets/images/cover/alphafold-cookbook-cover.png)
 
 # Section 1. Introduction to AlphaFold: Background and Significance
 
@@ -12,7 +12,7 @@ However, to perform its specific biological function, this linear chain must fol
 
 For over half a century, scientists faced the **"Protein Folding Problem"**: given only the one-dimensional sequence of amino acids, how can we predict the final 3D structure that the protein will naturally adopt? Because an amino acid chain can theoretically fold into an astronomical number of configurations (a paradox known as *Levinthal's paradox*), calculating the correct shape using traditional physics and chemistry simulations was practically impossible.
 
-![A protein chain progressing from a linear amino acid sequence into a folded 3D structure, illustrating Levinthal's paradox](../assets/images/sections/section-01-01-levinthals-paradox.png)
+![A protein chain progressing from a linear amino acid sequence into a folded 3D structure, illustrating Levinthal's paradox](/alphafold-cookbook/assets/images/sections/section-01-01-levinthals-paradox.png)
 
 ---
 
@@ -29,4 +29,4 @@ For over half a century, scientists faced the **"Protein Folding Problem"**: giv
       └── Costs hundreds of thousands of dollars
 ```
 
-![Scientific instruments and measurement patterns representing rigorous experimental protein structure methods](../assets/images/sections/section-01-02-experimental-methods.png)
+![Scientific instruments and measurement patterns representing rigorous experimental protein structure methods](/alphafold-cookbook/assets/images/sections/section-01-02-experimental-methods.png)
