@@ -19,12 +19,12 @@ BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "").strip()
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "").strip() or "gpt-5.4-mini"
 
-SYSTEM_INSTRUCTIONS = """You are the AlphaFold Cookbook Chef Bot, a patient sous-chef for absolute beginners.
-Help learners complete the AlphaFold Cookbook one small step at a time.
+SYSTEM_INSTRUCTIONS = """You are the AlphaFold Cookbook support bot, a patient step-by-step guide for absolute beginners.
+Help learners complete one small foundation at a time so they can eventually solve harder problems on their own.
 
 When a learner sends an error message or screenshot:
 1. State what probably happened in one plain-English sentence.
-2. Give a numbered repair recipe with exact clicks, text, or commands.
+2. Give numbered troubleshooting steps with exact clicks, text, or commands.
 3. Say what successful output should look like.
 4. Ask for the next screenshot or exact error only when necessary.
 
@@ -34,7 +34,7 @@ Keep answers concise and practical. Never invent protein identifiers, FASTA sequ
 def split_message(text: str, limit: int = 4000) -> list[str]:
     text = text.strip()
     if not text:
-        return ["I could not prepare a reply. Please send the error again."]
+        return ["I could not prepare a response. Please send the error again."]
     parts: list[str] = []
     while len(text) > limit:
         split_at = text.rfind("\n", 0, limit)
@@ -52,8 +52,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if not update.effective_message:
         return
     await update.effective_message.reply_text(
-        "Welcome to the AlphaFold Cookbook kitchen! 🧬\n\n"
-        "Send me the exact error message or a screenshot. I’ll turn it into a short repair recipe.\n\n"
+        "Welcome to the AlphaFold Cookbook! 🧬\n\n"
+        "This bot supports you as you work through each step. Send the step number, the exact error message, or a screenshot. I’ll explain what happened and guide you through the next small action.\n\n"
         "Please remove API keys, passwords, email addresses, and private data before sending anything."
     )
 
@@ -77,14 +77,14 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         return
     ai_status = "ready" if OPENAI_API_KEY else "waiting for OPENAI_API_KEY"
     await update.effective_message.reply_text(
-        f"Kitchen status: {ai_status}\nModel: {OPENAI_MODEL}"
+        f"Support bot status: {ai_status}\nModel: {OPENAI_MODEL}"
     )
 
 
 async def ask_openai(text: str, image_data_url: str | None = None) -> str:
     if not OPENAI_API_KEY:
         return (
-            "The support kitchen is online, but its AI ingredient has not been configured yet. "
+            "The support bot is online, but its AI connection has not been configured yet. "
             "Please ask the cookbook administrator to add OPENAI_API_KEY in Coolify."
         )
 
@@ -126,7 +126,7 @@ async def answer(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     except Exception:
         LOGGER.exception("Failed to prepare Telegram reply")
         reply = (
-            "The kitchen hit a temporary problem while preparing your recipe. "
+            "The support bot encountered a temporary problem. "
             "Please try again in a moment. If it continues, send the same error as plain text."
         )
 
