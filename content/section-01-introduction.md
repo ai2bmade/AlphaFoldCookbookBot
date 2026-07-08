@@ -28,3 +28,5 @@ For over half a century, scientists faced the **"Protein Folding Problem"**: giv
       ├── Takes months to years
       └── Costs hundreds of thousands of dollars
 ```
+
+![Scientific instruments and measurement patterns representing rigorous experimental protein structure methods](../assets/images/sections/section-01-02-experimental-methods.png)
