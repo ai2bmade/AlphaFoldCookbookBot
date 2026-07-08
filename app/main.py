@@ -77,7 +77,7 @@ def render_page() -> str:
   </header>
   <main>
     <article>{body}</article>
-    <div class="footer">AI2Learn Cookbook · Master the basics, step by step—then go further on your own.</div>
+    <div class="footer">AI2Learn Cookbook · Step-by-step foundations for going further on your own.</div>
   </main>
 </body>
 </html>"""

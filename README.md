@@ -1,6 +1,6 @@
 # AlphaFold Cookbook
 
-An AI-collaboration cookbook for complete beginners who want to explore protein structure prediction without prior biology or programming experience.
+An AI-collaboration cookbook for complete beginners who want to explore protein structure prediction without prior biology or programming experience. Here, “cookbook” means a practical, step-by-step path: complete one small foundation at a time, then use that confidence to go further on your own.
 
 Learners act as the chef. AI acts as the sous-chef. Each short, visual step helps the learner select a verified protein sequence, explore or predict its structure, create a rotating 3D visualization, and write a careful beginner-friendly report.
 
