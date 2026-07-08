@@ -4,7 +4,7 @@ import logging
 import os
 
 from openai import AsyncOpenAI
-from telegram import Update
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.constants import ChatAction
 from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
 
@@ -51,10 +51,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     del context
     if not update.effective_message:
         return
+    lesson_button = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("Start Section 1 →", url="https://ai2learn.com/alphafold-cookbook")]]
+    )
     await update.effective_message.reply_text(
         "Welcome to the AlphaFold Cookbook! 🧬\n\n"
-        "This bot supports you as you work through each step. Send the step number, the exact error message, or a screenshot. I’ll explain what happened and guide you through the next small action.\n\n"
-        "Please remove API keys, passwords, email addresses, and private data before sending anything."
+        "Begin with Section 1 below. Work through each small step at your own pace, and message me whenever you need help moving forward.",
+        reply_markup=lesson_button,
     )
 
 
@@ -66,8 +69,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         "How to ask for help:\n"
         "1. Tell me which cookbook step you are on.\n"
         "2. Paste the complete error, or attach one screenshot.\n"
-        "3. Tell me what you expected to happen.\n\n"
-        "I provide educational troubleshooting, not medical or investment advice."
+        "3. Tell me what you expected to happen."
     )
 
 
