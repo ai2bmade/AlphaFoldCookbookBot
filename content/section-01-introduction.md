@@ -12,6 +12,8 @@ However, to perform its specific biological function, this linear chain must fol
 
 For over half a century, scientists faced the **"Protein Folding Problem"**: given only the one-dimensional sequence of amino acids, how can we predict the final 3D structure that the protein will naturally adopt? Because an amino acid chain can theoretically fold into an astronomical number of configurations (a paradox known as *Levinthal's paradox*), calculating the correct shape using traditional physics and chemistry simulations was practically impossible.
 
+![A protein chain progressing from a linear amino acid sequence into a folded 3D structure, illustrating Levinthal's paradox](../assets/images/sections/section-01-01-levinthals-paradox.png)
+
 ---
 
 ### 1.2 Traditional Experimental Methods: The Cost of Certainty
