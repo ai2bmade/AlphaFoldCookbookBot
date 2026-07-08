@@ -30,3 +30,25 @@ For over half a century, scientists faced the **"Protein Folding Problem"**: giv
 ```
 
 ![Scientific instruments and measurement patterns representing rigorous experimental protein structure methods](/alphafold-cookbook/assets/images/sections/section-01-02-experimental-methods.png)
+
+---
+
+### 1.3 The AlphaFold Revolution and the CASP Landmark
+
+In 2020, Google DeepMind introduced AlphaFold2 at CASP14 (Critical Assessment of Structure Prediction), a global competition often referred to as the "Olympics of Protein Folding." Every two years, teams worldwide compete blindly to predict protein structures that have been solved experimentally but not yet published.
+
+AlphaFold achieved an unprecedented median score of 92.4 GDT (Global Distance Test). A score above 90 is widely considered competitively equivalent to results obtained through tedious experimental lab methods. It solved in days—and sometimes minutes—what took humans years to discover.
+
+![AlphaFold protein structure visualization highlighting its 92.4 GDT result at CASP14](/alphafold-cookbook/assets/images/sections/section-01-03-alphafold-92-4-gdt.png)
+
+This breakthrough was so profound that it earned its lead creators, Demis Hassabis and John Jumper, the 2024 Nobel Prize in Chemistry. Today, the AlphaFold Database contains predicted structures for nearly all cataloged proteins known to science (over 200 million), completely transforming fields like drug design, green chemistry (plastic-eating enzymes), and basic disease research.
+
+---
+
+### 👩‍🍳 Cookbook Chef's Note: How to Approach This with AI
+
+![A cookbook chef working with an AI assistant and a molecular recipe](/alphafold-cookbook/assets/images/sections/section-01-chefs-note.png)
+
+You do not need a Ph.D. in biochemistry to use AlphaFold. Think of AlphaFold as a highly sophisticated kitchen appliance. Your job as a chef is to know what ingredient (amino acid sequence) to put into the machine and how to interpret the finished dish (the 3D structural file).
+
+Throughout this cookbook, your AI co-worker (ChatGPT/Claude/Gemini) will act as your knowledgeable kitchen assistant, translating complex molecular data into insights you can easily comprehend.
