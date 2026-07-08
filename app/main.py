@@ -5,6 +5,8 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
+from app.portal import render_portal
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONTENT_FILE = BASE_DIR / "content" / "section-01-introduction.md"
@@ -83,11 +85,15 @@ def render_page() -> str:
 </html>"""
 
 
-@app.get("/", response_class=HTMLResponse)
 @app.get("/alphafold-cookbook", response_class=HTMLResponse)
 @app.get("/alphafold-cookbook/", response_class=HTMLResponse)
 async def home() -> str:
     return render_page()
+
+
+@app.get("/", response_class=HTMLResponse)
+async def portal() -> str:
+    return render_portal()
 
 
 @app.get("/health")
