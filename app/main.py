@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import markdown
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -92,7 +92,19 @@ async def home() -> str:
 
 
 @app.get("/", response_class=HTMLResponse)
-async def portal() -> str:
+async def portal(request: Request) -> str:
+    forwarded_path = " ".join(
+        filter(
+            None,
+            (
+                request.headers.get("x-forwarded-prefix"),
+                request.headers.get("x-forwarded-uri"),
+                request.headers.get("x-original-uri"),
+            ),
+        )
+    )
+    if "/alphafold-cookbook" in forwarded_path:
+        return render_page()
     return render_portal()
 
 
